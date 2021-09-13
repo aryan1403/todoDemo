@@ -7,11 +7,10 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-
 import com.aryan1403.DB.Service;
-
 import org.bson.Document;
 
+// GUI File
 public class todoApp {
     static JFrame frame;
     JTextField textField;
@@ -39,6 +38,7 @@ public class todoApp {
         button.addActionListener(e -> {
             frame.add(new todo(index, x, y, textField.getText()));
             frame.repaint();
+            // Calling Service Method addTodo
             new Service().addTodo(index, textField.getText());
             y += 50;
             index++;
@@ -52,10 +52,13 @@ public class todoApp {
         frame.getContentPane().setBackground(new Color(23, 23, 23));
         frame.add(textField);
         frame.add(button);
+        // Iterator Object
         Iterator<Document> it = new Service().getAllTodo().iterator();
 
+        // Iterate over all the documents
         while(it.hasNext()) {
-            Document doc = it.next();
+            Document doc = it.next(); // Move to the next Document
+            // Add the existing todo
             frame.add(new todo(Integer.parseInt(doc.get("id").toString()), x, y, doc.get("todo").toString()));
             y += 50;
         }
