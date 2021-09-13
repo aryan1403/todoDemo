@@ -7,6 +7,7 @@ import com.aryan1403.DB.Service;
 import java.awt.Color;
 import java.awt.Font;
 
+// Panel Component
 public class todo extends JPanel {
     public todo(int index, int x, int y, String t) {
         JLabel label = new JLabel(index + ". "+t);
@@ -24,13 +25,13 @@ public class todo extends JPanel {
         button.setLayout(null);
         button.addActionListener(e -> {
             todoApp.frame.remove(this);
+            // Calling Service Method : Delete 
             new Service().delete(index);
             todoApp.frame.repaint();
         });
 
         this.setBounds(x, y, 600, 40);
         this.setBackground(new Color(23, 23, 23));
-        //this.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.white));
         this.setLayout(null);
         this.add(label);
         this.add(button);
