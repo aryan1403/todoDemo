@@ -10,7 +10,7 @@ A Simple Todo App written in Java Swing xD
 1) Install JAVA
 2) Install Apache Maven
 3) Install [Mongo Shell](https://downloads.mongodb.com/compass/mongosh-1.0.5-x64.msi)
-3) Install [MongoDB Compass](https://downloads.mongodb.com/compass/mongodb-compass-1.28.4-win32-x64.zip)
+3) Install [MongoDB Compass](https://downloads.mongodb.com/compass/mongodb-compass-1.28.4-win32-x64.zip) (Optional)
 4) Run App.java
 
 
